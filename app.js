@@ -1,7 +1,8 @@
 const emailToggle = document.querySelector('.email-toggle input');
 const profileToggle = document.querySelector(".profile-toggle input");
-const toggleOff = document.querySelectorAll('.off');
+
 const toggleOn = document.querySelector(".on");
+const slider = document.querySelector('.slider')
 const alertBanner = document.getElementById("alert");
 
 const traficCanvas = document.querySelector("#trafic-chart");
@@ -9,6 +10,7 @@ const dailyCanvas = document.getElementById("dailyCanvas");
 const mobileCanvas = document.getElementById("mobile-chart");
 
 
+window.onresize = function(){ location.reload(); }
 
 alertBanner.innerHTML = 
 `
@@ -20,11 +22,12 @@ to complete</p>
 `;
 
 alertBanner.addEventListener("click", e => {
-  const element = e.target;
-  if( element.classList.contains("alert-banner-close" )) {
-    alert.style.display = "none";
-  }
-});
+ if(e.target.className === 'alert-banner-close'){
+
+ 
+  alertBanner.style.display = "none";
+  
+}});
 
 
 const trafficData = {
@@ -123,7 +126,7 @@ let mobileChart = new Chart(mobileCanvas, {
   });
   const user = document.getElementById("user-field");
   const message = document.getElementById("message-field");
-  const send = document.getElementsByClassName("send");
+  const send = document.querySelector(".send");
 send.addEventListener("click", () => {
   // ensure user and message fields are filled out
   if (user.value === "" && message.value === "") {
@@ -144,10 +147,8 @@ send.addEventListener("click", () => {
 //     toggleOff[0].style.display = '';
 //   }
 // });
-// profileToggle.addEventListener("click", () => {
-//     if (profileToggle.checked) {
-//         toggleOff[1].style.display = "none";
-//     } else {
-//         toggleOff[1].style.display = "";
-//     }
-// });
+slider.addEventListener("click", () => {
+    
+        toggleOn.style.display = "";
+    } 
+);

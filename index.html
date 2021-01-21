@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap" rel="stylesheet">
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.min.js"></script>
 </head>
   <!-- body-->
@@ -19,8 +19,9 @@
       
         <!-- bell icon-->
         <div class="Profile">
+          <div class="bell-icon">
         <svg class = 'bell' version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 32 32" fill= 'White' style="enable-background:new 0 0 32 32;" xml:space="preserve">
+          viewBox="0 0 32 32"  style="enable-background:new 0 0 32 32;" xml:space="preserve">
                 <style type="text/css">
                   
                 </style>
@@ -31,6 +32,10 @@
                   </g>
                </g>
          </svg>
+        
+      
+        <div class="green-circle"></div>
+      </div>
          <!-- profileImg & name-->
        
             
@@ -142,7 +147,7 @@
     <!-- charts-->
     <div class="center">
   <div class="trafic">
-        <h3>TRAFFIC</h3>
+        <h4 class="traffichead">TRAFFIC</h4>
         <div>
         <ul class="nav">
             <li>Hourly</li>
@@ -153,7 +158,7 @@
       </div>
   </div>
   <div class="traf">
-    <canvas id="trafic-chart" height="200px"></canvas>
+    <canvas id="trafic-chart" ></canvas>
   </div>  
   
 
@@ -194,8 +199,8 @@
 
     </div>
        <div class="social-text">
-        <p> Tweeter</p>
-        <p> 10345</p>
+        <p class='soc'> Tweeter</p>
+        <p class="numb"> 10,345</p>
 
        </div> 
     </div>
@@ -205,8 +210,8 @@
         <path fill="white" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg>
     </div>
        <div class="social-text">
-        <p> Facebook</p>
-        <p> 8739</p>
+        <p class='soc'> Facebook</p>
+        <p class="numb"> 8,739</p>
 
 
        </div> 
@@ -237,8 +242,8 @@
         
         </div> 
        <div class="social-text">
-           <p> Google+</p>
-           <p> 2530</p>
+           <p class='soc'> Google+</p>
+           <p class="numb"> 2,530</p>
 
       
 
@@ -342,27 +347,52 @@
 
         </section>
         <!-- SETTING SECTION-->
-        <section class="setting">
-            <h3>SETTINGS</h3>
-            <div class= 'box'>
-            <label for="box">Send Email Notification</label>
-            <input type="checkbox" id="box">
-            </div>
-            <div class= 'boxx'>
-            <label for="check">Self Profile to Public</label>
-            <input type="checkbox" id="check">
+       <!-- Settings -->
+    <section class="setting" id="settings">
+      <h3>SETTINGS</h3>
+
+      <!-- Custom Toggle Switch -->
+      <div class="toggle-container">
+        <h4>Send Email Notifications</h4>
+         <label class="switch">
+          <input type="checkbox" id="togBtn">
+          <div class="slider round">
+           <!--ADDED HTML -->
+           <span class="on">ON</span>
+           <span class="off">OFF</span>
+           <!--END-->
           </div>
-          
-        <select name="form-field" id="time-zone">
-            <option disabled Selected >Selecte Time Zone</option>   
-        <option >Eastern</option>
-        </select>
-            <div class="button">
-              <button class="save"> Save</button>
-              <button class="cancel"> Cancel</button>
-            </div>
+        </label>
+      </div>
+
+      <!-- Custom Toggle Switch -->
+      <div class="toggle-container">
+        <h4>Set Profile To Public</h4>
+        <label class="switch">
+          <input type="checkbox" id="togBtn">
+          <div class="slider round">
+           <!--ADDED HTML -->
+           <span class="on">ON</span>
+           <span class="off">OFF</span>
+           <!--END-->
           </div>
-</section>
+        </label>
+      </div>
+
+      <select id="timezone" class="form-field">
+        <option disabled selected>Select a Timezone</option>
+        <option>Eastern</option>
+        <option>Central</option>
+        <option>Pacific</option>
+      </select>
+      <div class="">
+        <button class="save" id="save">Save</button>
+        <button class="cancel" id="cancel">Cancel</button>
+      </div>
+    </section>
+    
+
+  </main>
 
 
 
