@@ -623,6 +623,18 @@ section.phone {
 .nav {
     margin-right: -30px;
   }
+  .but{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      
+  }
+  select#timezone {
+    margin-bottom: 65px;
+}
+.save{
+    padding-left: 30px;
+}
 }
  @media(min-width:1024px){
     nav.main-nav {
